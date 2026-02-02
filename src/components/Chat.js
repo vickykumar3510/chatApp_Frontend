@@ -7,7 +7,13 @@ import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
 import "./chat.css";
 
-const socket = io("https://chat-app-backend-delta-ten.vercel.app");
+const socket = io(
+  "https://chat-app-backend-delta-ten.vercel.app",
+  {
+    transports: ["polling"],
+    withCredentials: true,
+  }
+);
 
 export const Chat = ({ user }) => {
   
