@@ -1,0 +1,253 @@
+/* ---------------- Chat List ---------------- */
+.chat-list {
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    float: left;
+}
+
+.chat-user {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+.chat-user:hover {
+    background-color: #f0f0f0;
+}
+
+.chat-user.active {
+    background-color: #d0f0d0;
+}
+
+/* ---------------- Chat Window ---------------- */
+.chat-window {
+    margin-left: 210px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+/* ---------------- Message Field ---------------- */
+.message-field {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.message-field input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.btn-prime {
+    background-color: #daf8cb;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-prime:hover {
+    background-color: #c0f0b0;
+}
+
+/* ---------------- Message List ---------------- */
+.message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+/* Individual messages */
+.message {
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 60%;
+    word-wrap: break-word;
+    position: relative;
+}
+
+/* Sent vs Received */
+.message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.message.received {
+    background-color: #fff;
+    align-self: flex-start;
+}
+
+/* Timestamp and status container */
+.message-meta {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
+    color: gray;
+    margin-top: 2px;
+    gap: 4px;
+}
+
+/* Status ticks */
+.status.seen {
+    color: blue;
+}
+
+/* ---------------- Typing Indicator ---------------- */
+.typing-indicator {
+    font-style: italic;
+    color: gray;
+    margin: 4px 0;
+}
+
+/* Optional scroll styling for chat messages */
+.message-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+.status.sent {
+    color: #919191;     
+}
+
+.status.delivered {
+    color: #919191;    
+}
+
+.status.seen {
+    color: #4fc3f7;    
+}
+
+
+/* for message seen*/
+
+.status.pulse {
+  animation: seenPulse 0.5s ease-in-out;
+}
+
+@keyframes seenPulse {
+  0% { color: #919191; }
+  50% { color: #4fc3f7; }
+  100% { color: #4fc3f7; }
+}
+
+/* unread count */
+.unread-count {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  float: right;
+  margin-left: 5px;
+}
+
+/* date in chat history */
+.date-separator {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 12px;
+  color: gray;
+  background: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* log out button */
+
+.logoutBtn {
+    background-color: black;
+    border: 1px solid black;
+    color: wheat;
+    height: fit-content;
+    padding: 5px;
+}
+
+.logoutBtn:hover {
+    background-color: white;
+    color: red;
+}
+
+/* ---------------- Mobile Responsive ---------------- */
+/* ---------------- Mobile Responsive ---------------- */
+@media (max-width: 480px) {
+
+  /* Reset layout */
+  .chat-list {
+    width: 100%;
+    float: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  .chat-window {
+    margin-left: 0;
+    padding: 8px;
+    max-height: calc(100vh - 140px);
+  }
+
+  /* Chat users */
+  .chat-user {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* Message list takes full screen height */
+  .message-list {
+    max-height: calc(100vh - 200px);
+    padding: 8px;
+  }
+
+  /* Messages should be wider on mobile */
+  .message {
+    max-width: 85%;
+    font-size: 14px;
+  }
+
+  /* Input area */
+  .message-field {
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .message-field input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .btn-prime {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Unread count */
+  .unread-count {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+
+  /* Logout button */
+  .logoutBtn {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
