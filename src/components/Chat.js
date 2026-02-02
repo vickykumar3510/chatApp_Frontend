@@ -10,7 +10,7 @@ import "./chat.css";
 const socket = io(
   "https://chat-app-backend-delta-ten.vercel.app",
   {
-    transports: ["polling"],
+    transports: ["websocket"],
     withCredentials: true,
   }
 );
