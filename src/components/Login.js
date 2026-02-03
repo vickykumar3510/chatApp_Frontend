@@ -7,7 +7,7 @@ const Login = ({ setUser }) => {
 
   const handleLogin = async () => {
     try {
-      const { data } = await axios.post("https://chat-app-backend-delta-ten.vercel.app/auth/login", {
+      const { data } = await axios.post("https://chatapp-backend-v6a6.onrender.com/auth/login", {
         username,
         password,
       });

@@ -11,7 +11,7 @@ export const UnreadMessagesProvider = ({ user, children }) => {
     if (!user?.username) return;
     try {
       const { data } = await axios.get(
-        "https://chat-app-backend-delta-ten.vercel.app/unread-count",
+        "https://chatapp-backend-v6a6.onrender.com/unread-count",
         {
           params: { currentUser: user.username },
         }

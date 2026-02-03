@@ -7,13 +7,7 @@ import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
 import "./chat.css";
 
-const socket = io(
-  "https://chat-app-backend-delta-ten.vercel.app",
-  {
-    transports: ["websocket"],
-    withCredentials: true,
-  }
-);
+const socket = io("https://chatapp-backend-v6a6.onrender.com");
 
 export const Chat = ({ user }) => {
   
@@ -37,7 +31,7 @@ export const Chat = ({ user }) => {
 
     const loadUnreadCounts = async () => {
       try {
-        const { data } = await axios.get("https://chat-app-backend-delta-ten.vercel.app/unread-count", {
+        const { data } = await axios.get("https://chatapp-backend-v6a6.onrender.com/unread-count", {
           params: { currentUser: user.username },
         });
         setUnreadCounts(data);
@@ -53,7 +47,7 @@ export const Chat = ({ user }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const { data } = await axios.get("https://chat-app-backend-delta-ten.vercel.app/users", {
+        const { data } = await axios.get("https://chatapp-backend-v6a6.onrender.com/users", {
           params: { currentUser: user.username },
         });
         setUsers(data);
@@ -102,7 +96,7 @@ export const Chat = ({ user }) => {
   /* ---- FETCH MESSAGES ---- */
   const fetchMessages = async (receiver) => {
     try {
-      const { data } = await axios.get("https://chat-app-backend-delta-ten.vercel.app/messages", {
+      const { data } = await axios.get("https://chatapp-backend-v6a6.onrender.com/messages", {
         params: { sender: user.username, receiver },
       });
 
