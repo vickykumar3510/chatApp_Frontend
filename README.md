@@ -3,13 +3,13 @@
 A full-stack chat app, where you can chat with any user who has account on it. It's main features are show unread messages number, tick provided for tracker user online or not, and turn the tick to blue when user seen the message.
 
 ## Demo Link
-[Live Demo](add app website link)
+[Live Demo](https://chat-app-frontend-ten-nu.vercel.app/)
 
 ## Quick Start
 
 ```
-git clone "add app clone link frotend"
-cd <app clone name here>
+git clone "https://github.com/vickykumar3510/chatApp_Frontend.git"
+cd <chatApp_Frontend>
 npm install
 npm start
 ```
