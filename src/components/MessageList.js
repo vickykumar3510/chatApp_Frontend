@@ -6,9 +6,10 @@ const MessageList = ({ messages, user, currentChat, onSeen }) => {
   const messageListRef = useRef(null);
 
   const formatTime = (time) =>
-    new Date(time).toLocaleTimeString([], {
+    new Date(time).toLocaleTimeString(undefined, {
       hour: "2-digit",
       minute: "2-digit",
+      hour12: true,
     });
 
   const getStatusIcon = (status) => {
@@ -75,8 +76,7 @@ const MessageList = ({ messages, user, currentChat, onSeen }) => {
                 msg.sender === user.username ? "sent" : "received"
               }`}
             >
-              <strong>{msg.sender}: </strong>
-              {msg.message}
+              <p className="message-body">{msg.message}</p>
 
               <div className="message-meta">
                 <small>{formatTime(msg.createdAt)}</small>

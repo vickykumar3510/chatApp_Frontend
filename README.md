@@ -1,9 +1,9 @@
 # Workasana
 
-A full-stack chat app, where you can chat with any user who has account on it. It's main features are show unread messages number, tick provided for tracker user online or not, and turn the tick to blue when user seen the message.
+A full-stack chat app, where you can chat with any user who has account on it. It's main features are show unread messages number, tick provided for tracker user online or not, and turn the tick to green when user seen the message.
 
 ## Demo Link
-[Live Demo](https://chat-app-frontend-ten-nu.vercel.app/)
+[Live Demo](https://chat-app-tool-ten-nu.vercel.app/)
 
 ## Quick Start
 
@@ -20,7 +20,6 @@ npm start
  * Node.js
  * Express
  * MongoDB
- * JWT
  * socket.io
 
 ## Demo Video
@@ -33,7 +32,7 @@ Watch a walkthrough of all the major features of this app: [Google Drive Link](h
 - Unique username required to create the account
 
 **Dashbord**
-- Welcome message with user's name
+- Name logo as a profile picture
 - List of users in left side
 - Emoji(s) and text box are provided to chat
 - Clicking enter will the send the text also

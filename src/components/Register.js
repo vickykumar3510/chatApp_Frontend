@@ -1,22 +1,22 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Register = ({ setUser }) => {
+const Register = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [registerationSuccess, setRegistrationSuccess] = useState(null);
 
   const handleRegister = async () => {
     try {
-      const { data } = await axios.post("https://chatapp-backend-v6a6.onrender.com/auth/register", {
+      await axios.post("https://chatapp-backend-v6a6.onrender.com/auth/register", {
         username,
         password,
       });
 
-      setRegistrationSuccess(
-        "You are registered successfully. Proceed to login."
-      );
-      setUser(data);
+      window.alert("Register successfully. Please login.");
+      navigate("/login");
     } catch (error) {
       console.error(error.response?.data?.message || "Error registering user");
       setRegistrationSuccess(
@@ -28,31 +28,51 @@ const Register = ({ setUser }) => {
   };
 
   return (
-    <div className="card py-5 text-center">
-      <div className="card-body px-5">
-        <h2>Register</h2>
-        <p>Not a user yet? Register here</p>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          className="form-control form-control-lg mt-3"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          className="form-control form-control-lg mt-3"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+    <div className="auth-card">
+      <div className="auth-card-header">
+        <h1>Create an account</h1>
+        <p>Choose a username and password to join.</p>
+      </div>
+      <div className="auth-card-body">
+        <div className="auth-form-group">
+          <label htmlFor="register-username">Username</label>
+          <input
+            id="register-username"
+            type="text"
+            autoComplete="username"
+            placeholder="Pick a username"
+            value={username}
+            className="form-control"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="auth-form-group">
+          <label htmlFor="register-password">Password</label>
+          <input
+            id="register-password"
+            type="password"
+            autoComplete="new-password"
+            placeholder="Create a password"
+            value={password}
+            className="form-control"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
         <button
-          className="btn btn-success btn-lg mt-3"
+          type="button"
+          className="btn-auth-primary"
           onClick={handleRegister}
         >
-          Register
+          Create account
         </button>
-        {registerationSuccess && <p>{registerationSuccess}</p>}
+        {registerationSuccess && (
+          <p className="auth-error mb-0" role="alert">
+            {registerationSuccess}
+          </p>
+        )}
+        <p className="auth-footer mb-0">
+          Already have an account? <Link to="/login">Sign in</Link>
+        </p>
       </div>
     </div>
   );

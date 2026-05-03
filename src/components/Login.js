@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Login = ({ setUser }) => {
@@ -17,32 +18,73 @@ const Login = ({ setUser }) => {
       localStorage.setItem("user", JSON.stringify(data));
     } catch (error) {
       console.error(error.response?.data?.message || "Error logging in");
+      if (!error.response) {
+        window.alert(
+          "Unable to login. Please check your connection and try again."
+        );
+        return;
+      }
+      const status = error.response.status;
+      const msg = String(error.response?.data?.message ?? "").toLowerCase();
+      const looksLikeWrongPassword =
+        status === 401 ||
+        status === 403 ||
+        msg.includes("password") ||
+        msg.includes("incorrect") ||
+        msg.includes("invalid credentials") ||
+        msg.includes("wrong password");
+      if (looksLikeWrongPassword) {
+        window.alert("Incorrect password.");
+      } else {
+        window.alert(
+          error.response?.data?.message || "Incorrect password."
+        );
+      }
     }
   };
 
   return (
-    <div className="card py-5 text-center">
-      <div className="card-body px-5">
-        <h2>Login</h2>
-        <p>Login with your credentials to continue.</p>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          className="form-control form-control-lg mt-3"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          className="form-control form-control-lg mt-3"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+    <div className="auth-card">
+      <div className="auth-card-header">
+        <h1>Welcome back</h1>
+        <p>Sign in with your username and password.</p>
+      </div>
+      <div className="auth-card-body">
+        <div className="auth-form-group">
+          <label htmlFor="login-username">Username</label>
+          <input
+            id="login-username"
+            type="text"
+            autoComplete="username"
+            placeholder="Enter your username"
+            value={username}
+            className="form-control"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="auth-form-group">
+          <label htmlFor="login-password">Password</label>
+          <input
+            id="login-password"
+            type="password"
+            autoComplete="current-password"
+            placeholder="Enter your password"
+            value={password}
+            className="form-control"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
-        <button className="btn btn-success btn-lg mt-3" onClick={handleLogin}>
-          Login
+        <button
+          type="button"
+          className="btn-auth-primary"
+          onClick={handleLogin}
+        >
+          Sign in
         </button>
+        <p className="auth-footer mb-0">
+          Not a user yet? <Link to="/register">Register here</Link>
+        </p>
       </div>
     </div>
   );

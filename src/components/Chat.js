@@ -7,7 +7,9 @@ import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
 import "./chat.css";
 
-const socket = io("https://chatapp-backend-v6a6.onrender.com");
+const socket = io("https://chatapp-backend-v6a6.onrender.com", {
+  withCredentials: true
+})
 
 export const Chat = ({ user }) => {
   
@@ -160,61 +162,135 @@ export const Chat = ({ user }) => {
   }
 
 
+  const initials = (name) =>
+    String(name || "?")
+      .slice(0, 2)
+      .toUpperCase();
+
+  const sidebarUsers = users.filter(
+    (u) => u.username && u.username !== user.username
+  );
+
   return (
-    <div className="chat-container">
-      <h2>Welcome, {user.username}</h2>
-
-      <div className="chat-list">
-        <button className="logoutBtn" onClick={handleLogout}>Log Out</button><br/><br/>
-
-        <h3>Chats</h3>
-        {users.filter((u) => u.username && u.username !== user.username).map((u) => (
-          <div
-            key={u._id}
-            className={`chat-user ${currentChat === u.username ? "active" : ""}`}
-            onClick={() => fetchMessages(u.username)}
-          >
-            {u.username}
-            {unreadCounts[u.username] > 0 && (
-              <span className="unread-count">{unreadCounts[u.username]}</span>
-            )}
+    <div className="chat-app">
+      <aside className="chat-sidebar">
+        <div className="chat-sidebar-header">
+          <div className="chat-user-pill">
+            <div className="chat-avatar" aria-hidden="true">
+              {initials(user.username)}
+            </div>
+            <div className="chat-user-meta">
+              <div className="name">{user.username}</div>
+              <div className="hint">Signed in</div>
+            </div>
           </div>
-        ))}
-      </div>
-
-      {currentChat && (
-        <div className="chat-window">
-          <h5 style={{"color" : "gray"}}>You are chatting with {currentChat}</h5>
-
-          <MessageList
-            messages={messages}
-            user={user}
-            onSeen={(msg) =>
-              socket.emit("mark_seen", { messageId: msg._id, sender: msg.sender })
-            }
-          />
-
-          {isTyping && <div className="typing-indicator">{currentChat} is typing...</div>}
-
-          <div className="message-field">
-            <input
-              type="text"
-              value={currentMessage}
-              placeholder="Type a message..."
-              onChange={handleTyping}
-              onKeyDown={handleKeyDown}
-            />
-            <button className="btn-prime" onClick={() => setShowEmoji((p) => !p)}>
-              😀
-            </button>
-            <button className="btn-prime" onClick={sendMessage}>
-              Send
-            </button>
-          </div>
-
-          {showEmoji && <Picker data={data} onEmojiSelect={addEmoji} />}
+          <button type="button" className="btn-logout" onClick={handleLogout}>
+            Log out
+          </button>
         </div>
-      )}
+        <div className="chat-sidebar-section-title">Conversations</div>
+        <div className="chat-user-list">
+          {sidebarUsers.length === 0 && (
+            <div className="chat-user-meta hint" style={{ padding: "0 0.5rem" }}>
+              No other users yet.
+            </div>
+          )}
+          {sidebarUsers.map((u) => (
+            <div
+              key={u._id}
+              className={`chat-user ${currentChat === u.username ? "active" : ""}`}
+              onClick={() => fetchMessages(u.username)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  fetchMessages(u.username);
+                }
+              }}
+            >
+              <span>{u.username}</span>
+              {unreadCounts[u.username] > 0 && (
+                <span className="unread-count">{unreadCounts[u.username]}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </aside>
+
+      <main className="chat-main">
+        {!currentChat ? (
+          <div className="chat-empty">
+            <div className="chat-empty-icon" aria-hidden="true">
+              💬
+            </div>
+            <h2>Select a conversation</h2>
+            <p>
+              Pick someone from the list to send messages and see your history.
+            </p>
+          </div>
+        ) : (
+          <div className="chat-window">
+            <header className="chat-main-toolbar">
+              <div className="toolbar-avatar" aria-hidden="true">
+                {initials(currentChat)}
+              </div>
+              <div className="toolbar-text">
+                <h2>{currentChat}</h2>
+              </div>
+            </header>
+
+            <div className="message-list-wrap">
+              <MessageList
+                messages={messages}
+                user={user}
+                currentChat={currentChat}
+                onSeen={(msg) =>
+                  socket.emit("mark_seen", { messageId: msg._id, sender: msg.sender })
+                }
+              />
+              {isTyping && (
+                <div className="typing-indicator">
+                  <span>{currentChat} is typing…</span>
+                </div>
+              )}
+            </div>
+
+            <div className="composer">
+              <div className="message-field">
+                <input
+                  type="text"
+                  value={currentMessage}
+                  placeholder="Write a message…"
+                  onChange={handleTyping}
+                  onKeyDown={handleKeyDown}
+                  aria-label="Message"
+                />
+                <button
+                  type="button"
+                  className="btn-prime"
+                  onClick={() => setShowEmoji((p) => !p)}
+                  title="Emoji"
+                >
+                  ☺
+                </button>
+                <button
+                  type="button"
+                  className="btn-prime btn-prime-send"
+                  onClick={sendMessage}
+                >
+                  Send
+                </button>
+              </div>
+              {showEmoji && (
+                <div className="emoji-popover-slot">
+                  <Picker data={data} onEmojiSelect={addEmoji} />
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </main>
     </div>
   );
 };
