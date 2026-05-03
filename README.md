@@ -1,4 +1,4 @@
-# Workasana
+# ChatApp
 
 A full-stack chat app, where you can chat with any user who has account on it. It's main features are show unread messages number, tick provided for tracker user online or not, and turn the tick to green when user seen the message.
 
