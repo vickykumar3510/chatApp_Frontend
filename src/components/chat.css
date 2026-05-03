@@ -457,7 +457,6 @@
   }
 }
 
-/* Tablet: narrower sidebar keeps content readable */
 @media (max-width: 900px) {
   .chat-sidebar {
     width: min(260px, 34vw);
@@ -492,11 +491,6 @@
   }
 }
 
-/*
- * Narrow screens keep the same two-column desktop layout (sidebar left, chat
- * right). Only touch / readability tweaks here — breakpoints above already
- * scale the sidebar width (900px / 720px).
- */
 @media (max-width: 640px) {
   .chat-app {
     flex: 1;
