@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useContext,
+  useRef,
+} from "react";
 import { UnreadMessagesContext } from "../contexts/UnreadMessagesContext";
 import { io } from "socket.io-client";
 import axios from "axios";
@@ -9,7 +15,34 @@ import "./chat.css";
 
 const socket = io("https://chatapp-backend-v6a6.onrender.com", {
   withCredentials: true
-})
+});
+
+const EMOJI_PICKER_NAV_STYLE_ID = "chat-emoji-picker-nav-chrome";
+
+/** Emoji-mart category strip lives in shadow DOM; tint #nav only so icons stay muted vs grid. */
+const injectEmojiPickerNavChrome = (pickerEl) => {
+  const shadow = pickerEl?.shadowRoot;
+  if (!shadow || shadow.getElementById(EMOJI_PICKER_NAV_STYLE_ID)) return;
+  const style = document.createElement("style");
+  style.id = EMOJI_PICKER_NAV_STYLE_ID;
+  style.textContent = `
+#nav button {
+  color: #6c757d !important;
+}
+#nav button:hover,
+#nav button:focus-visible {
+  color: #4a90e2 !important;
+}
+#nav button[aria-selected="true"],
+#nav button[aria-selected] {
+  color: #4a90e2 !important;
+}
+#nav .bar {
+  background-color: #4a90e2 !important;
+}
+`.trim();
+  shadow.appendChild(style);
+};
 
 export const Chat = ({ user }) => {
   
@@ -21,6 +54,29 @@ export const Chat = ({ user }) => {
   const [isTyping, setIsTyping] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
   const typingTimeout = useRef(null);
+  const emojiSlotRef = useRef(null);
+
+  useLayoutEffect(() => {
+    if (!showEmoji) return;
+    const slot = emojiSlotRef.current;
+    if (!slot) return;
+
+    const apply = () => {
+      const picker = slot.querySelector("em-emoji-picker");
+      if (picker) injectEmojiPickerNavChrome(picker);
+    };
+
+    apply();
+    const mo = new MutationObserver(apply);
+    mo.observe(slot, { childList: true, subtree: true });
+    const t = window.setTimeout(apply, 0);
+    const t2 = window.setTimeout(apply, 150);
+    return () => {
+      mo.disconnect();
+      window.clearTimeout(t);
+      window.clearTimeout(t2);
+    };
+  }, [showEmoji]);
 
   /* ---- JOIN SOCKET ---- */
   useEffect(() => {
@@ -119,6 +175,7 @@ export const Chat = ({ user }) => {
 
   /* ---- SEND MESSAGE ---- */
   const sendMessage = () => {
+    setShowEmoji(false);
     if (!currentMessage.trim()) return;
 
     socket.emit("send_message", {
@@ -268,7 +325,7 @@ export const Chat = ({ user }) => {
                 />
                 <button
                   type="button"
-                  className="btn-prime"
+                  className="btn-prime btn-emoji"
                   onClick={() => setShowEmoji((p) => !p)}
                   title="Emoji"
                 >
@@ -283,8 +340,26 @@ export const Chat = ({ user }) => {
                 </button>
               </div>
               {showEmoji && (
-                <div className="emoji-popover-slot">
-                  <Picker data={data} onEmojiSelect={addEmoji} />
+                <div className="emoji-popover-wrap">
+                  <div className="emoji-popover-slot" ref={emojiSlotRef}>
+                    <Picker
+                      data={data}
+                      onEmojiSelect={addEmoji}
+                      set="native"
+                      theme="light"
+                    />
+                  </div>
+                  <div className="emoji-popover-close-bar">
+                    <button
+                      type="button"
+                      className="emoji-popover-close"
+                      onClick={() => setShowEmoji(false)}
+                      aria-label="Close emoji picker"
+                      title="Close"
+                    >
+                      ×
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

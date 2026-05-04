@@ -255,16 +255,21 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  background-color: #f0faf4;
+  background-image: url("./chat-doodle-pattern.svg"),
+    linear-gradient(165deg, #c5e6d0 0%, #e2f3e8 48%, #f4faf7 100%);
+  background-size: 1280px 1280px, 100% 100%;
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0, 0 0;
 }
 
 .message-list {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem calc(1.25rem + 80px) 0.85rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .message-list::-webkit-scrollbar {
@@ -277,18 +282,20 @@
 }
 
 .message {
-  padding: 10px 14px;
-  border-radius: 16px;
-  max-width: min(72%, 520px);
+  padding: 11px 16px;
+  border-radius: 17px;
+  max-width: min(74%, 600px);
   word-wrap: break-word;
   position: relative;
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   line-height: 1.45;
   box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
 }
 
 .message .message-body {
   margin: 0;
+  font-size: 1em;
+  font-variant-emoji: emoji;
 }
 
 .message.sent {
@@ -327,8 +334,11 @@
   align-items: center;
   font-size: 0.6875rem;
   color: #94a3b8;
-  margin-top: 6px;
+  margin-top: 3px;
   gap: 6px;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, ui-sans-serif,
+    sans-serif;
+  font-variant-emoji: normal;
 }
 
 .message.received .message-meta {
@@ -336,7 +346,7 @@
 }
 
 .typing-indicator {
-  padding: 0 1.25rem 0.5rem;
+  padding: 0 calc(1.25rem + 80px) 0.5rem;
   font-size: 0.8125rem;
   color: #64748b;
   font-style: italic;
@@ -344,7 +354,7 @@
 
 .chat-window .composer {
   flex-shrink: 0;
-  padding: 0.875rem 1.25rem 1rem;
+  padding: 0.875rem calc(1.25rem + 80px) 1rem;
   position: relative;
   z-index: 2;
   background: linear-gradient(180deg, #dfe6ee 0%, #ccd6e2 55%, #c5d0de 100%);
@@ -353,9 +363,55 @@
     inset 0 1px 0 rgb(255 255 255 / 0.45);
 }
 
+.emoji-popover-wrap {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.emoji-popover-close-bar {
+  flex-shrink: 0;
+}
+
+.emoji-popover-close {
+  box-sizing: border-box;
+  width: 1.375rem;
+  height: 1.375rem;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgb(100 116 139 / 0.45);
+  border-radius: 4px;
+  background: #fff;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 1px 3px rgb(15 23 42 / 0.12);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.emoji-popover-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: rgb(71 85 105 / 0.55);
+}
+
 .emoji-popover-slot {
   position: relative;
-  margin-top: 0.5rem;
+}
+
+/* Prefer system color emoji fonts (emoji-mart shadow inherits from host). */
+.emoji-popover-slot em-emoji-picker {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, ui-sans-serif,
+    sans-serif, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
+  font-variant-emoji: emoji;
 }
 
 .chat-window .message-field {
@@ -402,17 +458,37 @@
     box-shadow 0.15s, filter 0.15s;
 }
 
-.chat-window .composer .btn-prime:not(.btn-prime-send) {
+.chat-window .composer .btn-prime:not(.btn-prime-send):not(.btn-emoji) {
   border: 1px solid rgb(180 138 31 / 0.55);
   background: linear-gradient(180deg, #fef9c3 0%, #fde047 55%, #facc15 100%);
   color: #713f12;
   box-shadow: 0 1px 2px rgb(161 98 7 / 0.2);
 }
 
-.chat-window .composer .btn-prime:not(.btn-prime-send):hover {
+.chat-window .composer .btn-prime:not(.btn-prime-send):not(.btn-emoji):hover {
   background: linear-gradient(180deg, #fffbeb 0%, #fde68a 50%, #fbbf24 100%);
   color: #422006;
   border-color: rgb(146 114 42 / 0.75);
+}
+
+.chat-window .composer .btn-emoji {
+  flex-shrink: 0;
+  min-width: 2.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: #6c757d;
+  background: rgb(108 117 125 / 0.1);
+  border: 1px solid rgb(108 117 125 / 0.32);
+  box-shadow: none;
+}
+
+.chat-window .composer .btn-emoji:hover {
+  color: #545b62;
+  background: rgb(108 117 125 / 0.16);
+  border-color: rgb(108 117 125 / 0.45);
 }
 
 .chat-window .composer .btn-prime-send {
@@ -429,16 +505,31 @@
 }
 
 .date-separator {
-  align-self: center;
-  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0.55rem 0 0.3rem;
+  flex-shrink: 0;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, ui-sans-serif,
+    sans-serif;
+  font-variant-emoji: normal;
+}
+
+.message-list > .date-separator:first-child {
+  margin-top: 0.15rem;
+}
+
+.date-separator-label {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: #64748b;
-  background: rgb(255 255 255 / 0.8);
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid #e2e8f0;
+  color: #475569;
+  background: #e2e8f0;
 }
 
 .status.pulse {
@@ -476,18 +567,18 @@
   }
 
   .message-list {
-    padding-inline: calc(1rem + env(safe-area-inset-left, 0px))
-      calc(1rem + env(safe-area-inset-right, 0px));
+    padding-inline: calc(1rem + 80px + env(safe-area-inset-left, 0px))
+      calc(1rem + 80px + env(safe-area-inset-right, 0px));
   }
 
   .chat-window .composer {
-    padding-inline: calc(1rem + env(safe-area-inset-left, 0px))
-      calc(1rem + env(safe-area-inset-right, 0px));
+    padding-inline: calc(1rem + 80px + env(safe-area-inset-left, 0px))
+      calc(1rem + 80px + env(safe-area-inset-right, 0px));
   }
 
   .typing-indicator {
-    padding-inline: calc(1.25rem + env(safe-area-inset-left, 0px))
-      calc(1.25rem + env(safe-area-inset-right, 0px));
+    padding-inline: calc(1.25rem + 80px + env(safe-area-inset-left, 0px))
+      calc(1.25rem + 80px + env(safe-area-inset-right, 0px));
   }
 }
 
@@ -504,8 +595,8 @@
   }
 
   .message-list {
-    padding-inline: calc(0.75rem + env(safe-area-inset-left, 0px))
-      calc(0.75rem + env(safe-area-inset-right, 0px));
+    padding-inline: calc(0.75rem + 80px + env(safe-area-inset-left, 0px))
+      calc(0.75rem + 80px + env(safe-area-inset-right, 0px));
   }
 
   .chat-window .composer {
@@ -513,12 +604,13 @@
       0.75rem,
       calc(0.5rem + env(safe-area-inset-bottom, 0px))
     );
-    padding-inline: calc(0.75rem + env(safe-area-inset-left, 0px))
-      calc(0.75rem + env(safe-area-inset-right, 0px));
+    padding-inline: calc(0.75rem + 80px + env(safe-area-inset-left, 0px))
+      calc(0.75rem + 80px + env(safe-area-inset-right, 0px));
   }
 
   .message {
-    font-size: 0.875rem;
+    font-size: 1.0625rem;
+    padding: 10px 14px;
   }
 
   .chat-window .message-field input {
@@ -541,7 +633,7 @@
   }
 
   .typing-indicator {
-    padding-inline: calc(0.75rem + env(safe-area-inset-left, 0px))
-      calc(0.75rem + env(safe-area-inset-right, 0px));
+    padding-inline: calc(0.75rem + 80px + env(safe-area-inset-left, 0px))
+      calc(0.75rem + 80px + env(safe-area-inset-right, 0px));
   }
 }

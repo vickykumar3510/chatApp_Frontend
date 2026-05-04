@@ -1,0 +1,476 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280">
+  <g fill="none" stroke="#14532d" stroke-opacity="0.09" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+    <!-- airplane -->
+    <g transform="translate(499.8 69.4) rotate(-43.2) scale(3.076) translate(-10 -10)">
+      <path d="M2 10h14M9 6l-1 8 1-1 1 1 1-8z"/>
+    </g>
+    <!-- snowflake -->
+    <g transform="translate(1172.4 77.2) rotate(22.9) scale(2.978) translate(-10 -10)">
+      <path d="M10 2v16M3 10h14M4.5 4.5l11 11M15.5 4.5l-11 11"/>
+    </g>
+    <!-- car -->
+    <g transform="translate(873.8 79.9) rotate(38.9) scale(3.881) translate(-10 -10)">
+      <path d="M3 12h14l-2 3H5z"/><circle cx="6" cy="15" r="1.5"/><circle cx="14" cy="15" r="1.5"/>
+    </g>
+    <!-- anchor -->
+    <g transform="translate(261.9 102.3) rotate(8.0) scale(2.525) translate(-10 -10)">
+      <path d="M10 4v9M6 13h8"/><path d="M10 13c-3 0-5 2-5 4h10c0-2-2-4-5-4"/><circle cx="10" cy="10" r="1"/>
+    </g>
+    <!-- key -->
+    <g transform="translate(739.8 102.6) rotate(-42.9) scale(3.289) translate(-10 -10)">
+      <circle cx="7" cy="8" r="2.5"/><path d="M9 10l6 6M14 14l1 1"/>
+    </g>
+    <!-- bicycle -->
+    <g transform="translate(597.0 102.9) rotate(7.6) scale(3.636) translate(-10 -10)">
+      <circle cx="5" cy="14" r="3"/><circle cx="15" cy="14" r="3"/><path d="M5 14l5-6 2 3 3-3M15 14l-5-6"/>
+    </g>
+    <!-- cactus -->
+    <g transform="translate(1067.3 103.0) rotate(-16.5) scale(4.289) translate(-10 -10)">
+      <path d="M10 3v16M6 8H4M6 12H3M14 6h2M14 10h2"/>
+    </g>
+    <!-- lock -->
+    <g transform="translate(381.1 108.2) rotate(10.8) scale(4.714) translate(-10 -10)">
+      <path d="M6 9V7a4 3 0 0 1 8 0v2"/><rect x="5" y="9" width="10" height="9" rx="1"/>
+    </g>
+    <!-- hammer -->
+    <g transform="translate(964.9 111.0) rotate(25.5) scale(2.113) translate(-10 -10)">
+      <path d="M5 5h10v2H5z"/><path d="M10 7v11"/>
+    </g>
+    <!-- tree -->
+    <g transform="translate(139.0 124.2) rotate(36.9) scale(3.173) translate(-10 -10)">
+      <path d="M10 18V11M5 16L10 5l5 11"/>
+    </g>
+    <!-- rainbow -->
+    <g transform="translate(880.5 177.3) rotate(22.4) scale(1.966) translate(-10 -10)">
+      <path d="M3 14Q10 6 17 14M5 14Q10 9 15 14M7 14Q10 11 13 14"/>
+    </g>
+    <!-- coffee -->
+    <g transform="translate(1195.1 192.8) rotate(5.2) scale(2.909) translate(-10 -10)">
+      <path d="M4 6h10v8H4zM14 8h2a2 2 0 0 1 0 4h-2M6 4V3M10 4V2M8 1v1"/>
+    </g>
+    <!-- heart -->
+    <g transform="translate(1004.2 193.6) rotate(-13.3) scale(1.975) translate(-10 -10)">
+      <path d="M10 17s-6-3.5-6-8a3.5 3.5 0 0 1 6-1 3.5 3.5 0 0 1 6 1c0 4.5-6 8-6 8z"/>
+    </g>
+    <!-- dinosaur -->
+    <g transform="translate(257.9 195.4) rotate(34.4) scale(1.961) translate(-10 -10)">
+      <path d="M2 14h4l1-4 3-1 2 5h4M6 10v-3q0-3 3-3h2"/>
+    </g>
+    <!-- headphones -->
+    <g transform="translate(576.7 200.4) rotate(-2.3) scale(1.869) translate(-10 -10)">
+      <path d="M3 11a7 5 0 0 1 14 0"/><path d="M3 11v3a2 2 0 0 0 4 0v-3M13 11v3a2 2 0 0 0 4 0v-3"/>
+    </g>
+    <!-- mountain -->
+    <g transform="translate(462.1 201.0) rotate(-24.3) scale(3.037) translate(-10 -10)">
+      <path d="M1 17h18M4 17L10 7l4 5 4-5 6 10"/>
+    </g>
+    <!-- scissors -->
+    <g transform="translate(1088.3 210.8) rotate(47.9) scale(2.554) translate(-10 -10)">
+      <path d="M7 3l6 14M13 3L7 17"/><circle cx="8" cy="8" r="1.2"/><circle cx="12" cy="8" r="1.2"/>
+    </g>
+    <!-- magnifying glass -->
+    <g transform="translate(741.1 219.1) rotate(43.2) scale(2.184) translate(-10 -10)">
+      <circle cx="8" cy="8" r="4.5"/><path d="M11 11l5 5"/>
+    </g>
+    <!-- butterfly -->
+    <g transform="translate(646.4 230.8) rotate(4.8) scale(2.245) translate(-10 -10)">
+      <path d="M10 5v11"/><path d="M10 9C6 7 2 10 2 13s4 5 8 3"/><path d="M10 9c4-2 8 1 8 4s-4 5-8 3"/>
+    </g>
+    <!-- flower -->
+    <g transform="translate(953.2 260.9) rotate(1.0) scale(2.354) translate(-10 -10)">
+      <circle cx="9" cy="9" r="2"/><path d="M9 3v2M9 13v2M3 9h2M13 9h2M4.5 4.5l1.4 1.4M12.1 12.1l1.4 1.4M4.5 13.5l1.4-1.4M12.1 5.9l1.4-1.4"/>
+    </g>
+    <!-- globe -->
+    <g transform="translate(126.9 261.8) rotate(6.7) scale(4.193) translate(-10 -10)">
+      <circle cx="10" cy="10" r="7"/><path d="M3 10h14M10 4q3 3 3 6t-3 6"/>
+    </g>
+    <!-- train -->
+    <g transform="translate(543.3 267.0) rotate(7.9) scale(1.998) translate(-10 -10)">
+      <path d="M2 9h16v7H2zM5 11h3v2M12 11h3v2"/><path d="M3 16h3M14 16h3"/>
+    </g>
+    <!-- leaf -->
+    <g transform="translate(1164.6 273.9) rotate(9.8) scale(1.933) translate(-10 -10)">
+      <path d="M10 3c-5 4-7 9 0 15 7-6 5-11 0-15z"/>
+    </g>
+    <!-- book -->
+    <g transform="translate(351.4 274.4) rotate(11.1) scale(3.022) translate(-10 -10)">
+      <path d="M3 4h7v14H4a1 1 0 0 1-1-1V4zM10 4h7v13a1 1 0 0 1-1 1h-6"/><path d="M10 4v14"/>
+    </g>
+    <!-- hammer -->
+    <g transform="translate(803.2 298.0) rotate(-30.8) scale(2.823) translate(-10 -10)">
+      <path d="M5 5h10v2H5z"/><path d="M10 7v11"/>
+    </g>
+    <!-- globe -->
+    <g transform="translate(437.7 299.5) rotate(-46.1) scale(2.200) translate(-10 -10)">
+      <circle cx="10" cy="10" r="7"/><path d="M3 10h14M10 4q3 3 3 6t-3 6"/>
+    </g>
+    <!-- butterfly -->
+    <g transform="translate(888.2 320.5) rotate(-27.7) scale(2.450) translate(-10 -10)">
+      <path d="M10 5v11"/><path d="M10 9C6 7 2 10 2 13s4 5 8 3"/><path d="M10 9c4-2 8 1 8 4s-4 5-8 3"/>
+    </g>
+    <!-- hammer -->
+    <g transform="translate(1210.5 339.5) rotate(-16.5) scale(2.002) translate(-10 -10)">
+      <path d="M5 5h10v2H5z"/><path d="M10 7v11"/>
+    </g>
+    <!-- lightning bolt -->
+    <g transform="translate(515.0 341.7) rotate(-39.1) scale(2.177) translate(-10 -10)">
+      <path d="M11 2L7 10h4l-4 8h5l-3 8"/>
+    </g>
+    <!-- cat -->
+    <g transform="translate(656.7 354.2) rotate(-38.6) scale(4.612) translate(-10 -10)">
+      <path d="M4 12 6 5 8 12M10 12l2-7 2 7M3 12q5 6 10 0"/>
+    </g>
+    <!-- moon -->
+    <g transform="translate(1130.0 356.6) rotate(-35.2) scale(2.426) translate(-10 -10)">
+      <path d="M12 3a7 7 0 1 0 7 11 6 6 0 0 1-7-11z"/>
+    </g>
+    <!-- heart -->
+    <g transform="translate(985.3 360.0) rotate(-3.7) scale(4.007) translate(-10 -10)">
+      <path d="M10 17s-6-3.5-6-8a3.5 3.5 0 0 1 6-1 3.5 3.5 0 0 1 6 1c0 4.5-6 8-6 8z"/>
+    </g>
+    <!-- strawberry -->
+    <g transform="translate(124.6 376.1) rotate(-16.7) scale(1.963) translate(-10 -10)">
+      <path d="M9 3l-5 7q0 5 5 6t5-6-5-7zM6 6h.2M8 8h.2M10 6h.2M7 9h.2M11 8h.2"/>
+    </g>
+    <!-- mountain -->
+    <g transform="translate(228.3 379.7) rotate(19.6) scale(4.540) translate(-10 -10)">
+      <path d="M1 17h18M4 17L10 7l4 5 4-5 6 10"/>
+    </g>
+    <!-- coffee -->
+    <g transform="translate(367.4 387.7) rotate(-22.1) scale(2.737) translate(-10 -10)">
+      <path d="M4 6h10v8H4zM14 8h2a2 2 0 0 1 0 4h-2M6 4V3M10 4V2M8 1v1"/>
+    </g>
+    <!-- magnifying glass -->
+    <g transform="translate(889.2 406.8) rotate(-43.2) scale(2.353) translate(-10 -10)">
+      <circle cx="8" cy="8" r="4.5"/><path d="M11 11l5 5"/>
+    </g>
+    <!-- compass -->
+    <g transform="translate(563.5 406.9) rotate(-23.7) scale(2.273) translate(-10 -10)">
+      <circle cx="10" cy="10" r="7"/><path d="M10 10l2-5M10 10l-2 5"/><circle cx="10" cy="10" r="0.8"/>
+    </g>
+    <!-- fish -->
+    <g transform="translate(1189.1 414.0) rotate(-42.3) scale(2.114) translate(-10 -10)">
+      <path d="M2 10 Q10 5 18 10 Q10 15 2 10"/><path d="M14 10l4-2v4z"/><circle cx="5" cy="9" r="1"/>
+    </g>
+    <!-- rainbow -->
+    <g transform="translate(472.4 430.8) rotate(8.2) scale(1.937) translate(-10 -10)">
+      <path d="M3 14Q10 6 17 14M5 14Q10 9 15 14M7 14Q10 11 13 14"/>
+    </g>
+    <!-- guitar -->
+    <g transform="translate(754.3 457.6) rotate(-30.0) scale(4.055) translate(-10 -10)">
+      <path d="M10 3v11M6 7q4-2 8 0"/><ellipse cx="10" cy="17" rx="3" ry="2.5"/>
+    </g>
+    <!-- music note -->
+    <g transform="translate(1077.4 466.8) rotate(-35.5) scale(3.040) translate(-10 -10)">
+      <ellipse cx="10" cy="13" rx="3" ry="2"/><path d="M13 4v9M13 4h-2a2 2 0 0 0 0 4"/>
+    </g>
+    <!-- moon -->
+    <g transform="translate(415.5 479.1) rotate(-35.3) scale(1.911) translate(-10 -10)">
+      <path d="M12 3a7 7 0 1 0 7 11 6 6 0 0 1-7-11z"/>
+    </g>
+    <!-- cloud -->
+    <g transform="translate(97.8 479.3) rotate(-20.1) scale(4.706) translate(-10 -10)">
+      <path d="M4 12h10a4 4 0 0 0 0-6 3 3 0 0 0-5.5-1.5A4 4 0 0 0 4 12z"/>
+    </g>
+    <!-- bicycle -->
+    <g transform="translate(323.0 480.2) rotate(13.8) scale(3.511) translate(-10 -10)">
+      <circle cx="5" cy="14" r="3"/><circle cx="15" cy="14" r="3"/><path d="M5 14l5-6 2 3 3-3M15 14l-5-6"/>
+    </g>
+    <!-- balloon -->
+    <g transform="translate(1194.0 492.6) rotate(18.9) scale(2.264) translate(-10 -10)">
+      <path d="M10 4c-4 0-7 3-7 7 0 4 4 7 7 10 3-3 7-6 7-10 0-4-3-7-7-7zM10 21v5"/>
+    </g>
+    <!-- camera -->
+    <g transform="translate(942.3 505.6) rotate(-17.6) scale(4.168) translate(-10 -10)">
+      <rect x="2" y="5" width="16" height="12" rx="2"/><rect x="6" y="3" width="5" height="3" rx="1"/><circle cx="10" cy="11" r="3.5"/>
+    </g>
+    <!-- frog -->
+    <g transform="translate(214.2 509.6) rotate(-30.4) scale(2.654) translate(-10 -10)">
+      <circle cx="5" cy="6" r="1.6"/><circle cx="13" cy="6" r="1.6"/><path d="M3 12q5 4 9 0"/>
+    </g>
+    <!-- envelope -->
+    <g transform="translate(603.0 517.9) rotate(-2.0) scale(3.933) translate(-10 -10)">
+      <rect x="2" y="5" width="16" height="12" rx="1"/><path d="M2 7l8 6 8-6"/>
+    </g>
+    <!-- paintbrush -->
+    <g transform="translate(842.7 518.8) rotate(-45.2) scale(2.247) translate(-10 -10)">
+      <path d="M15 3L8 16"/><path d="M7 17l2 1"/><path d="M14 4l-2 5"/>
+    </g>
+    <!-- fish -->
+    <g transform="translate(482.5 555.2) rotate(18.3) scale(2.673) translate(-10 -10)">
+      <path d="M2 10 Q10 5 18 10 Q10 15 2 10"/><path d="M14 10l4-2v4z"/><circle cx="5" cy="9" r="1"/>
+    </g>
+    <!-- camera -->
+    <g transform="translate(692.4 561.0) rotate(13.3) scale(2.342) translate(-10 -10)">
+      <rect x="2" y="5" width="16" height="12" rx="2"/><rect x="6" y="3" width="5" height="3" rx="1"/><circle cx="10" cy="11" r="3.5"/>
+    </g>
+    <!-- cheese -->
+    <g transform="translate(264.4 587.3) rotate(6.3) scale(2.056) translate(-10 -10)">
+      <path d="M2 14L16 4l2 10H2zM5 10h.2M8 7h.2M11 11h.2"/>
+    </g>
+    <!-- lock -->
+    <g transform="translate(1156.5 593.6) rotate(34.6) scale(3.528) translate(-10 -10)">
+      <path d="M6 9V7a4 3 0 0 1 8 0v2"/><rect x="5" y="9" width="10" height="9" rx="1"/>
+    </g>
+    <!-- guitar -->
+    <g transform="translate(770.6 594.4) rotate(-15.0) scale(2.178) translate(-10 -10)">
+      <path d="M10 3v11M6 7q4-2 8 0"/><ellipse cx="10" cy="17" rx="3" ry="2.5"/>
+    </g>
+    <!-- sun -->
+    <g transform="translate(104.2 603.4) rotate(-35.3) scale(2.134) translate(-10 -10)">
+      <circle cx="10" cy="10" r="4"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4 4l1.5 1.5M14.5 14.5 16 16M4 16l1.5-1.5M14.5 5.5 16 4"/>
+    </g>
+    <!-- snowflake -->
+    <g transform="translate(183.2 604.7) rotate(42.1) scale(2.241) translate(-10 -10)">
+      <path d="M10 2v16M3 10h14M4.5 4.5l11 11M15.5 4.5l-11 11"/>
+    </g>
+    <!-- cat -->
+    <g transform="translate(1061.6 605.9) rotate(39.8) scale(1.860) translate(-10 -10)">
+      <path d="M4 12 6 5 8 12M10 12l2-7 2 7M3 12q5 6 10 0"/>
+    </g>
+    <!-- rocket -->
+    <g transform="translate(353.8 617.8) rotate(-14.6) scale(2.047) translate(-10 -10)">
+      <path d="M10 2l4 8-4 10-4-10 4-8zM6 10H4M14 10h2M8 18l-2 4M12 18l2 4"/>
+    </g>
+    <!-- wrench -->
+    <g transform="translate(893.7 627.5) rotate(-18.6) scale(3.628) translate(-10 -10)">
+      <path d="M4 4l12 12"/><path d="M13 4h3v3a4 4 0 0 1-5 5l-4-4"/>
+    </g>
+    <!-- airplane -->
+    <g transform="translate(537.5 634.2) rotate(22.5) scale(2.131) translate(-10 -10)">
+      <path d="M2 10h14M9 6l-1 8 1-1 1 1 1-8z"/>
+    </g>
+    <!-- clock -->
+    <g transform="translate(623.8 689.3) rotate(21.2) scale(4.512) translate(-10 -10)">
+      <circle cx="10" cy="10" r="8"/><path d="M10 10V5M10 10l4 2"/>
+    </g>
+    <!-- balloon -->
+    <g transform="translate(735.2 696.3) rotate(8.2) scale(2.106) translate(-10 -10)">
+      <path d="M10 4c-4 0-7 3-7 7 0 4 4 7 7 10 3-3 7-6 7-10 0-4-3-7-7-7zM10 21v5"/>
+    </g>
+    <!-- frog -->
+    <g transform="translate(441.7 696.4) rotate(-38.9) scale(3.715) translate(-10 -10)">
+      <circle cx="5" cy="6" r="1.6"/><circle cx="13" cy="6" r="1.6"/><path d="M3 12q5 4 9 0"/>
+    </g>
+    <!-- smartphone -->
+    <g transform="translate(291.9 700.2) rotate(9.1) scale(4.079) translate(-10 -10)">
+      <rect x="6" y="2" width="8" height="16" rx="1"/><path d="M10 4h.1"/>
+    </g>
+    <!-- balloon -->
+    <g transform="translate(988.3 701.5) rotate(-35.5) scale(2.560) translate(-10 -10)">
+      <path d="M10 4c-4 0-7 3-7 7 0 4 4 7 7 10 3-3 7-6 7-10 0-4-3-7-7-7zM10 21v5"/>
+    </g>
+    <!-- mushroom -->
+    <g transform="translate(86.4 711.1) rotate(28.4) scale(2.209) translate(-10 -10)">
+      <path d="M10 12v6M4 12q6-7 12 0"/><ellipse cx="10" cy="11" rx="7" ry="4"/>
+    </g>
+    <!-- rocket -->
+    <g transform="translate(1196.0 725.3) rotate(-28.0) scale(3.248) translate(-10 -10)">
+      <path d="M10 2l4 8-4 10-4-10 4-8zM6 10H4M14 10h2M8 18l-2 4M12 18l2 4"/>
+    </g>
+    <!-- leaf -->
+    <g transform="translate(1090.8 728.8) rotate(-22.2) scale(3.130) translate(-10 -10)">
+      <path d="M10 3c-5 4-7 9 0 15 7-6 5-11 0-15z"/>
+    </g>
+    <!-- ice cream -->
+    <g transform="translate(824.1 738.9) rotate(16.2) scale(3.215) translate(-10 -10)">
+      <path d="M4 6h10l-5 9-5-9zM9 15v4"/>
+    </g>
+    <!-- crown -->
+    <g transform="translate(180.9 741.9) rotate(-42.3) scale(2.909) translate(-10 -10)">
+      <path d="M2 12h16M3 12V7l3 3 2-4 2 4 2-4 2 4 3-3v5"/>
+    </g>
+    <!-- compass -->
+    <g transform="translate(487.1 790.0) rotate(42.3) scale(3.102) translate(-10 -10)">
+      <circle cx="10" cy="10" r="7"/><path d="M10 10l2-5M10 10l-2 5"/><circle cx="10" cy="10" r="0.8"/>
+    </g>
+    <!-- cloud -->
+    <g transform="translate(979.0 793.1) rotate(-9.3) scale(2.306) translate(-10 -10)">
+      <path d="M4 12h10a4 4 0 0 0 0-6 3 3 0 0 0-5.5-1.5A4 4 0 0 0 4 12z"/>
+    </g>
+    <!-- ship -->
+    <g transform="translate(709.1 804.0) rotate(40.3) scale(2.079) translate(-10 -10)">
+      <path d="M2 14h16l-2 3H4zM10 14V7"/><path d="M7 9l6-1"/>
+    </g>
+    <!-- moon -->
+    <g transform="translate(610.4 806.0) rotate(-15.3) scale(2.905) translate(-10 -10)">
+      <path d="M12 3a7 7 0 1 0 7 11 6 6 0 0 1-7-11z"/>
+    </g>
+    <!-- palette -->
+    <g transform="translate(304.0 813.4) rotate(-21.2) scale(3.143) translate(-10 -10)">
+      <path d="M4 12q6-8 12 0t-4 5q-3 2-8 0"/><circle cx="7" cy="11" r="0.6"/><circle cx="12" cy="10" r="0.6"/><circle cx="10" cy="13" r="0.6"/>
+    </g>
+    <!-- flower -->
+    <g transform="translate(883.2 816.1) rotate(6.5) scale(2.337) translate(-10 -10)">
+      <circle cx="9" cy="9" r="2"/><path d="M9 3v2M9 13v2M3 9h2M13 9h2M4.5 4.5l1.4 1.4M12.1 12.1l1.4 1.4M4.5 13.5l1.4-1.4M12.1 5.9l1.4-1.4"/>
+    </g>
+    <!-- ship -->
+    <g transform="translate(1198.0 818.4) rotate(-21.3) scale(2.101) translate(-10 -10)">
+      <path d="M2 14h16l-2 3H4zM10 14V7"/><path d="M7 9l6-1"/>
+    </g>
+    <!-- bird -->
+    <g transform="translate(88.3 831.3) rotate(31.4) scale(3.587) translate(-10 -10)">
+      <path d="M2 10Q8 4 14 10Q8 16 2 10M6 8l2-2 2 2"/>
+    </g>
+    <!-- pencil -->
+    <g transform="translate(797.8 841.6) rotate(-22.0) scale(2.899) translate(-10 -10)">
+      <path d="M3 16L14 5l3 3L6 19H3v-3zM12 6l2 2"/>
+    </g>
+    <!-- wrench -->
+    <g transform="translate(422.5 864.9) rotate(-28.0) scale(2.668) translate(-10 -10)">
+      <path d="M4 4l12 12"/><path d="M13 4h3v3a4 4 0 0 1-5 5l-4-4"/>
+    </g>
+    <!-- star -->
+    <g transform="translate(213.3 867.2) rotate(-27.0) scale(3.426) translate(-10 -10)">
+      <path d="M10 4v12M4 10h12M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/>
+    </g>
+    <!-- cheese -->
+    <g transform="translate(1099.1 875.9) rotate(31.3) scale(4.165) translate(-10 -10)">
+      <path d="M2 14L16 4l2 10H2zM5 10h.2M8 7h.2M11 11h.2"/>
+    </g>
+    <!-- ship -->
+    <g transform="translate(939.3 876.5) rotate(6.0) scale(1.986) translate(-10 -10)">
+      <path d="M2 14h16l-2 3H4zM10 14V7"/><path d="M7 9l6-1"/>
+    </g>
+    <!-- sun -->
+    <g transform="translate(551.6 905.2) rotate(-24.3) scale(3.207) translate(-10 -10)">
+      <circle cx="10" cy="10" r="4"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4 4l1.5 1.5M14.5 14.5 16 16M4 16l1.5-1.5M14.5 5.5 16 4"/>
+    </g>
+    <!-- crown -->
+    <g transform="translate(1201.8 909.3) rotate(38.4) scale(2.862) translate(-10 -10)">
+      <path d="M2 12h16M3 12V7l3 3 2-4 2 4 2-4 2 4 3-3v5"/>
+    </g>
+    <!-- book -->
+    <g transform="translate(672.0 914.0) rotate(-15.1) scale(4.500) translate(-10 -10)">
+      <path d="M3 4h7v14H4a1 1 0 0 1-1-1V4zM10 4h7v13a1 1 0 0 1-1 1h-6"/><path d="M10 4v14"/>
+    </g>
+    <!-- envelope -->
+    <g transform="translate(355.4 919.3) rotate(14.0) scale(1.864) translate(-10 -10)">
+      <rect x="2" y="5" width="16" height="12" rx="1"/><path d="M2 7l8 6 8-6"/>
+    </g>
+    <!-- clock -->
+    <g transform="translate(865.4 945.0) rotate(35.8) scale(2.015) translate(-10 -10)">
+      <circle cx="10" cy="10" r="8"/><path d="M10 10V5M10 10l4 2"/>
+    </g>
+    <!-- scissors -->
+    <g transform="translate(273.0 945.7) rotate(41.8) scale(2.692) translate(-10 -10)">
+      <path d="M7 3l6 14M13 3L7 17"/><circle cx="8" cy="8" r="1.2"/><circle cx="12" cy="8" r="1.2"/>
+    </g>
+    <!-- palette -->
+    <g transform="translate(458.6 952.7) rotate(19.0) scale(2.118) translate(-10 -10)">
+      <path d="M4 12q6-8 12 0t-4 5q-3 2-8 0"/><circle cx="7" cy="11" r="0.6"/><circle cx="12" cy="10" r="0.6"/><circle cx="10" cy="13" r="0.6"/>
+    </g>
+    <!-- laptop -->
+    <g transform="translate(84.5 960.9) rotate(-17.0) scale(2.104) translate(-10 -10)">
+      <path d="M3 5h14v9H3z"/><path d="M2 15h16v2H2z"/>
+    </g>
+    <!-- paper airplane -->
+    <g transform="translate(167.6 966.1) rotate(46.6) scale(1.946) translate(-10 -10)">
+      <path d="M2 10L16 3 9 10l-1 6-3-4z"/>
+    </g>
+    <!-- raindrop -->
+    <g transform="translate(1054.4 978.0) rotate(-46.1) scale(2.193) translate(-10 -10)">
+      <path d="M10 4c-4 3-6 6-6 9a6 4 0 0 0 12 0c0-3-2-6-6-9z"/>
+    </g>
+    <!-- lightning bolt -->
+    <g transform="translate(966.6 980.9) rotate(-30.7) scale(2.511) translate(-10 -10)">
+      <path d="M11 2L7 10h4l-4 8h5l-3 8"/>
+    </g>
+    <!-- dinosaur -->
+    <g transform="translate(771.1 1001.5) rotate(16.1) scale(4.415) translate(-10 -10)">
+      <path d="M2 14h4l1-4 3-1 2 5h4M6 10v-3q0-3 3-3h2"/>
+    </g>
+    <!-- car -->
+    <g transform="translate(570.1 1009.6) rotate(-42.6) scale(1.880) translate(-10 -10)">
+      <path d="M3 12h14l-2 3H5z"/><circle cx="6" cy="15" r="1.5"/><circle cx="14" cy="15" r="1.5"/>
+    </g>
+    <!-- key -->
+    <g transform="translate(658.1 1023.7) rotate(-2.9) scale(2.430) translate(-10 -10)">
+      <circle cx="7" cy="8" r="2.5"/><path d="M9 10l6 6M14 14l1 1"/>
+    </g>
+    <!-- headphones -->
+    <g transform="translate(121.9 1032.5) rotate(-4.3) scale(2.371) translate(-10 -10)">
+      <path d="M3 11a7 5 0 0 1 14 0"/><path d="M3 11v3a2 2 0 0 0 4 0v-3M13 11v3a2 2 0 0 0 4 0v-3"/>
+    </g>
+    <!-- strawberry -->
+    <g transform="translate(411.0 1039.4) rotate(-15.9) scale(3.332) translate(-10 -10)">
+      <path d="M9 3l-5 7q0 5 5 6t5-6-5-7zM6 6h.2M8 8h.2M10 6h.2M7 9h.2M11 8h.2"/>
+    </g>
+    <!-- bird -->
+    <g transform="translate(1186.5 1044.9) rotate(-10.2) scale(3.210) translate(-10 -10)">
+      <path d="M2 10Q8 4 14 10Q8 16 2 10M6 8l2-2 2 2"/>
+    </g>
+    <!-- raindrop -->
+    <g transform="translate(500.9 1051.5) rotate(15.0) scale(2.197) translate(-10 -10)">
+      <path d="M10 4c-4 3-6 6-6 9a6 4 0 0 0 12 0c0-3-2-6-6-9z"/>
+    </g>
+    <!-- crown -->
+    <g transform="translate(198.3 1056.2) rotate(-27.0) scale(2.021) translate(-10 -10)">
+      <path d="M2 12h16M3 12V7l3 3 2-4 2 4 2-4 2 4 3-3v5"/>
+    </g>
+    <!-- tree -->
+    <g transform="translate(868.1 1058.2) rotate(27.9) scale(2.382) translate(-10 -10)">
+      <path d="M10 18V11M5 16L10 5l5 11"/>
+    </g>
+    <!-- music note -->
+    <g transform="translate(272.4 1074.1) rotate(43.6) scale(1.852) translate(-10 -10)">
+      <ellipse cx="10" cy="13" rx="3" ry="2"/><path d="M13 4v9M13 4h-2a2 2 0 0 0 0 4"/>
+    </g>
+    <!-- paper airplane -->
+    <g transform="translate(571.9 1092.0) rotate(-47.9) scale(2.067) translate(-10 -10)">
+      <path d="M2 10L16 3 9 10l-1 6-3-4z"/>
+    </g>
+    <!-- train -->
+    <g transform="translate(1046.4 1096.1) rotate(22.3) scale(2.062) translate(-10 -10)">
+      <path d="M2 9h16v7H2zM5 11h3v2M12 11h3v2"/><path d="M3 16h3M14 16h3"/>
+    </g>
+    <!-- ice cream -->
+    <g transform="translate(135.9 1127.7) rotate(-44.5) scale(2.643) translate(-10 -10)">
+      <path d="M4 6h10l-5 9-5-9zM9 15v4"/>
+    </g>
+    <!-- house -->
+    <g transform="translate(757.5 1139.1) rotate(-25.3) scale(4.699) translate(-10 -10)">
+      <path d="M3 10h14v8H3zM3 10l7-6 7 6M8 14v4h4v-4"/>
+    </g>
+    <!-- star -->
+    <g transform="translate(916.1 1143.4) rotate(-15.0) scale(3.603) translate(-10 -10)">
+      <path d="M10 4v12M4 10h12M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/>
+    </g>
+    <!-- house -->
+    <g transform="translate(1220.0 1158.6) rotate(42.9) scale(2.246) translate(-10 -10)">
+      <path d="M3 10h14v8H3zM3 10l7-6 7 6M8 14v4h4v-4"/>
+    </g>
+    <!-- laptop -->
+    <g transform="translate(416.4 1162.0) rotate(-0.8) scale(3.534) translate(-10 -10)">
+      <path d="M3 5h14v9H3z"/><path d="M2 15h16v2H2z"/>
+    </g>
+    <!-- pencil -->
+    <g transform="translate(62.2 1177.6) rotate(-47.4) scale(2.166) translate(-10 -10)">
+      <path d="M3 16L14 5l3 3L6 19H3v-3zM12 6l2 2"/>
+    </g>
+    <!-- mushroom -->
+    <g transform="translate(238.3 1178.1) rotate(-29.4) scale(4.701) translate(-10 -10)">
+      <path d="M10 12v6M4 12q6-7 12 0"/><ellipse cx="10" cy="11" rx="7" ry="4"/>
+    </g>
+    <!-- smartphone -->
+    <g transform="translate(521.7 1187.3) rotate(34.7) scale(2.251) translate(-10 -10)">
+      <rect x="6" y="2" width="8" height="16" rx="1"/><path d="M10 4h.1"/>
+    </g>
+    <!-- paintbrush -->
+    <g transform="translate(1129.7 1187.5) rotate(-26.2) scale(2.829) translate(-10 -10)">
+      <path d="M15 3L8 16"/><path d="M7 17l2 1"/><path d="M14 4l-2 5"/>
+    </g>
+    <!-- cactus -->
+    <g transform="translate(1034.5 1193.9) rotate(-34.6) scale(2.789) translate(-10 -10)">
+      <path d="M10 3v16M6 8H4M6 12H3M14 6h2M14 10h2"/>
+    </g>
+    <!-- anchor -->
+    <g transform="translate(625.0 1201.9) rotate(-1.5) scale(3.859) translate(-10 -10)">
+      <path d="M10 4v9M6 13h8"/><path d="M10 13c-3 0-5 2-5 4h10c0-2-2-4-5-4"/><circle cx="10" cy="10" r="1"/>
+    </g>
+    <!-- laptop -->
+    <g transform="translate(342.3 1219.6) rotate(-24.2) scale(2.105) translate(-10 -10)">
+      <path d="M3 5h14v9H3z"/><path d="M2 15h16v2H2z"/>
+    </g>
+  </g>
+</svg>

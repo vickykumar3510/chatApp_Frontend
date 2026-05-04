@@ -68,7 +68,15 @@ const MessageList = ({ messages, user, currentChat, onSeen }) => {
         return (
           <React.Fragment key={msg._id}>
             {showDate && (
-              <div className="date-separator">{formatDate(msg.createdAt)}</div>
+              <div
+                className="date-separator"
+                role="separator"
+                aria-label={`Date: ${formatDate(msg.createdAt)}`}
+              >
+                <span className="date-separator-label">
+                  {formatDate(msg.createdAt)}
+                </span>
+              </div>
             )}
 
             <div

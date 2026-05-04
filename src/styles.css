@@ -1,5 +1,6 @@
 :root {
-  --font: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font: "Plus Jakarta Sans", system-ui, -apple-system, ui-sans-serif, sans-serif,
+    "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
   --color-page: #f1f5f9;
   --color-page-auth: linear-gradient(160deg, #0f172a 0%, #1e293b 45%, #334155 100%);
   --color-surface: #ffffff;
