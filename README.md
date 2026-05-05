@@ -1,6 +1,6 @@
 # ChatApp
 
-A full-stack chat app, where you can chat with any user who has account on it. It's main features are show unread messages number, tick provided for tracker user online or not, and turn the tick to green when user seen the message.
+A full‑stack chat app where any user with an account can chat in real time. It shows unread message counts and tracks whether users are online. Message ticks update to green when a message is seen by the recipient.
 
 ## Demo Link
 [Live Demo](https://chat-app-tool-ten-nu.vercel.app/)
@@ -20,7 +20,8 @@ npm start
  * Node.js
  * Express
  * MongoDB
- * socket.io
+ * Socket.IO
+ * Axios
 
 ## Demo Video
 Watch a walkthrough of all the major features of this app: [Google Drive Link](https://drive.google.com/drive/folders/1_dGMryWWvsUrPT4DmYGSeL0agT3OMqPg?usp=sharing)
@@ -28,15 +29,20 @@ Watch a walkthrough of all the major features of this app: [Google Drive Link](h
 ## Features
 
 **Login Page**
-- Login and Regsiter user Boxes are provided
-- Unique username required to create the account
+- User login box provided
+- Credentials validated with backend API
+- Incorrect password alerts shown
+
+**Register Page**
+- User registration box provided
+- Unique username required to create account
+- Success alert and redirect to Login page
 
 **Dashbord**
 - Name logo as a profile picture
 - List of users in left side
 - Emoji(s) and text box are provided to chat
 - Clicking enter will the send the text also
-
 
 ## API Reference
 
