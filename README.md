@@ -1,6 +1,6 @@
 # ChatApp
 
-A full‑stack chat app where any user with an account can chat in real time. It shows unread message counts and tracks whether users are online. Message ticks update to green when a message is seen by the recipient.
+A full‑stack chat application where any user with an account can chat in real time. It shows unread message counts and tracks whether users are online. Message ticks update to green when a message is seen by the recipient.
 
 ## Demo Link
 [Live Demo](https://chat-app-tool-ten-nu.vercel.app/)
@@ -24,7 +24,7 @@ npm start
  * Axios
 
 ## Demo Video
-Watch a walkthrough of all the major features of this app: [Google Drive Link](https://drive.google.com/drive/folders/1_dGMryWWvsUrPT4DmYGSeL0agT3OMqPg?usp=sharing)
+Watch a walkthrough of all the major features of this app: [Google Drive Link](https://drive.google.com/file/d/1SgPYz7tR6GsL7DBPF6D4niWEhUNZBNMw/view?usp=sharing)
 
 ## Features
 
