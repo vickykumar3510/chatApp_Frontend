@@ -18,14 +18,38 @@ const socket = io("https://chatapp-backend-v6a6.onrender.com", {
 });
 
 const EMOJI_PICKER_NAV_STYLE_ID = "chat-emoji-picker-nav-chrome";
+const EMOJI_PICKER_LAYOUT_STYLE_ID = "chat-emoji-picker-layout";
 
-/** Emoji-mart category strip lives in shadow DOM; tint #nav only so icons stay muted vs grid. */
-const injectEmojiPickerNavChrome = (pickerEl) => {
+const emojiPickerLayoutCss = () => {
+  const narrow = window.matchMedia("(max-width: 720px)").matches;
+  return narrow
+    ? `
+:host {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: clamp(200px, 46vh, 300px) !important;
+  min-height: 180px !important;
+}
+`
+    : `
+:host {
+  width: 100% !important;
+  max-width: 352px;
+  height: 435px;
+  min-height: 230px;
+}
+`;
+};
+
+/** Emoji-mart lives in shadow DOM — nav tint + responsive host size. */
+const injectEmojiPickerChrome = (pickerEl) => {
   const shadow = pickerEl?.shadowRoot;
-  if (!shadow || shadow.getElementById(EMOJI_PICKER_NAV_STYLE_ID)) return;
-  const style = document.createElement("style");
-  style.id = EMOJI_PICKER_NAV_STYLE_ID;
-  style.textContent = `
+  if (!shadow) return;
+
+  if (!shadow.getElementById(EMOJI_PICKER_NAV_STYLE_ID)) {
+    const navStyle = document.createElement("style");
+    navStyle.id = EMOJI_PICKER_NAV_STYLE_ID;
+    navStyle.textContent = `
 #nav button {
   color: #6c757d !important;
 }
@@ -41,7 +65,16 @@ const injectEmojiPickerNavChrome = (pickerEl) => {
   background-color: #4a90e2 !important;
 }
 `.trim();
-  shadow.appendChild(style);
+    shadow.appendChild(navStyle);
+  }
+
+  let layoutStyle = shadow.getElementById(EMOJI_PICKER_LAYOUT_STYLE_ID);
+  if (!layoutStyle) {
+    layoutStyle = document.createElement("style");
+    layoutStyle.id = EMOJI_PICKER_LAYOUT_STYLE_ID;
+    shadow.appendChild(layoutStyle);
+  }
+  layoutStyle.textContent = emojiPickerLayoutCss();
 };
 
 export const Chat = ({ user }) => {
@@ -53,8 +86,17 @@ export const Chat = ({ user }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
+  const [emojiCompact, setEmojiCompact] = useState(false);
   const typingTimeout = useRef(null);
   const emojiSlotRef = useRef(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 720px)");
+    const sync = () => setEmojiCompact(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useLayoutEffect(() => {
     if (!showEmoji) return;
@@ -63,16 +105,22 @@ export const Chat = ({ user }) => {
 
     const apply = () => {
       const picker = slot.querySelector("em-emoji-picker");
-      if (picker) injectEmojiPickerNavChrome(picker);
+      if (picker) injectEmojiPickerChrome(picker);
     };
 
     apply();
     const mo = new MutationObserver(apply);
     mo.observe(slot, { childList: true, subtree: true });
+    const mq = window.matchMedia("(max-width: 720px)");
+    const onResize = () => apply();
+    mq.addEventListener("change", onResize);
+    window.addEventListener("resize", onResize);
     const t = window.setTimeout(apply, 0);
     const t2 = window.setTimeout(apply, 150);
     return () => {
       mo.disconnect();
+      mq.removeEventListener("change", onResize);
+      window.removeEventListener("resize", onResize);
       window.clearTimeout(t);
       window.clearTimeout(t2);
     };
@@ -343,10 +391,15 @@ export const Chat = ({ user }) => {
                 <div className="emoji-popover-wrap">
                   <div className="emoji-popover-slot" ref={emojiSlotRef}>
                     <Picker
+                      key={emojiCompact ? "emoji-compact" : "emoji-full"}
                       data={data}
                       onEmojiSelect={addEmoji}
                       set="native"
                       theme="light"
+                      dynamicWidth
+                      emojiButtonSize={emojiCompact ? 30 : 36}
+                      emojiSize={emojiCompact ? 20 : 24}
+                      maxFrequentRows={emojiCompact ? 2 : 4}
                     />
                   </div>
                   <div className="emoji-popover-close-bar">
