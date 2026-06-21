@@ -51,6 +51,8 @@ body {
   min-height: 100dvh;
   height: 100vh;
   height: 100dvh;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .app-shell.app-shell--chat > * {

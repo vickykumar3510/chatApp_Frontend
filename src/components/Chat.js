@@ -77,6 +77,8 @@ const injectEmojiPickerChrome = (pickerEl) => {
   layoutStyle.textContent = emojiPickerLayoutCss();
 };
 
+const MOBILE_BREAKPOINT = "(max-width: 768px)";
+
 export const Chat = ({ user }) => {
   
   const { unreadCounts, setUnreadCounts } = useContext(UnreadMessagesContext);
@@ -87,8 +89,24 @@ export const Chat = ({ user }) => {
   const [isTyping, setIsTyping] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
   const [emojiCompact, setEmojiCompact] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const typingTimeout = useRef(null);
   const emojiSlotRef = useRef(null);
+
+  const toggleSidebar = () => setSidebarOpen((prev) => !prev);
+  const closeSidebar = () => setSidebarOpen(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia(MOBILE_BREAKPOINT);
+    if (!mq.matches || !sidebarOpen) {
+      document.body.style.overflow = "";
+      return undefined;
+    }
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [sidebarOpen]);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 720px)");
@@ -209,6 +227,10 @@ export const Chat = ({ user }) => {
       setMessages(data);
       setCurrentChat(receiver);
 
+      if (window.matchMedia(MOBILE_BREAKPOINT).matches) {
+        setSidebarOpen(false);
+      }
+
       data.forEach((msg) => {
         if (msg.receiver === user.username && msg.status !== "seen") {
           socket.emit("mark_seen", { messageId: msg._id, sender: msg.sender });
@@ -276,8 +298,43 @@ export const Chat = ({ user }) => {
     (u) => u.username && u.username !== user.username
   );
 
+  const menuToggleButton = (
+    <button
+      type="button"
+      className="btn-sidebar-toggle"
+      onClick={toggleSidebar}
+      aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
+      aria-expanded={sidebarOpen}
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        aria-hidden="true"
+      >
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  );
+
   return (
-    <div className="chat-app">
+    <div
+      className={`chat-app${sidebarOpen ? " chat-app--sidebar-open" : ""}`}
+    >
+      {sidebarOpen && (
+        <button
+          type="button"
+          className="chat-sidebar-backdrop"
+          onClick={closeSidebar}
+          aria-label="Close sidebar"
+        />
+      )}
       <aside className="chat-sidebar">
         <div className="chat-sidebar-header">
           <div className="chat-user-pill">
@@ -325,7 +382,14 @@ export const Chat = ({ user }) => {
 
       <main className="chat-main">
         {!currentChat ? (
-          <div className="chat-empty">
+          <>
+            <header className="chat-main-toolbar chat-main-toolbar--empty">
+              {menuToggleButton}
+              <div className="toolbar-text">
+                <h2>Messages</h2>
+              </div>
+            </header>
+            <div className="chat-empty">
             <div className="chat-empty-icon" aria-hidden="true">
               💬
             </div>
@@ -334,9 +398,11 @@ export const Chat = ({ user }) => {
               Pick someone from the list to send messages and see your history.
             </p>
           </div>
+          </>
         ) : (
           <div className="chat-window">
             <header className="chat-main-toolbar">
+              {menuToggleButton}
               <div className="toolbar-avatar" aria-hidden="true">
                 {initials(currentChat)}
               </div>
