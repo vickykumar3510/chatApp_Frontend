@@ -38,6 +38,8 @@ npm start
  * Socket.IO
  * Axios
 
+ ---
+
 ## Demo Video
 
 Watch a walkthrough (2-3 minutes) of all the major features of this app: [Google Drive Link](https://drive.google.com/file/d/1SgPYz7tR6GsL7DBPF6D4niWEhUNZBNMw/view?usp=sharing)
