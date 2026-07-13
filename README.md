@@ -2,8 +2,21 @@
 
 A full‑stack chat application where any user with an account can chat in real time. It shows unread message counts and tracks whether users are online. Message ticks update to green when a message is seen by the recipient.
 
+---
+
 ## Demo Link
+
 [Live Demo](https://chat-app-tool-ten-nu.vercel.app/)
+
+---
+
+## Login
+
+> **Guest** <br>
+> Username: `vicky`  <br>
+> Password: `vicky`
+
+---
 
 ## Quick Start
 
@@ -13,8 +26,10 @@ cd <chatApp_Frontend>
 npm install
 npm start
 ```
+---
 
 ## Technologies
+
  * React JS
  * React Router
  * Node.js
@@ -24,7 +39,10 @@ npm start
  * Axios
 
 ## Demo Video
-Watch a walkthrough of all the major features of this app: [Google Drive Link](https://drive.google.com/file/d/1SgPYz7tR6GsL7DBPF6D4niWEhUNZBNMw/view?usp=sharing)
+
+Watch a walkthrough (2-3 minutes) of all the major features of this app: [Google Drive Link](https://drive.google.com/file/d/1SgPYz7tR6GsL7DBPF6D4niWEhUNZBNMw/view?usp=sharing)
+
+---
 
 ## Features
 
@@ -43,6 +61,8 @@ Watch a walkthrough of all the major features of this app: [Google Drive Link](h
 - List of users in left side
 - Emoji(s) and text box are provided to chat
 - Clicking enter will the send the text also
+
+---
 
 ## API Reference
 
@@ -69,5 +89,8 @@ To register new  user<br>
 **GET/api/login**<br>
 To login the user<br>
 
+---
+
 ## Contact
+
 For bugs or feature requests, please reach out to vicky.kumar3510@gmail.com
